@@ -1,0 +1,28 @@
+plugins {
+    id 'groovy'
+    id "com.gradle.plugin-publish" version "0.9.5"
+    id 'maven'
+}
+
+dependencies {
+    compile localGroovy()
+    compile gradleApi() 
+}
+
+version = '0.0.2'
+group = 'org.bven.jniplugin'
+description = 'JNI build orchestration for Gradle'
+
+pluginBundle {
+  website = 'https://github.com/bgorven/JNIBuilder'
+  vcsUrl = 'https://github.com/bgorven/JNIBuilder'
+  description = 'JNI build orchestration for Gradle'
+  tags = ['jni', 'native', 'jvm']
+
+  plugins {
+    jniBuilder {
+      id = 'org.bven.jniplugin'
+      displayName = 'Gradle JNI plugin'
+    }
+  }
+}
